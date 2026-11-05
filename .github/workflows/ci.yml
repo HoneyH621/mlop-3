@@ -8,7 +8,6 @@ on:
     branches: [main]
 
 jobs:
-
   build-and-test:
     runs-on: ubuntu-latest
 
@@ -21,16 +20,12 @@ jobs:
         with:
           python-version: '3.11'
 
-      - 
-      - 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install numpy pandas scikit-learn joblib pytest flask
           python -m pip show joblib
           python -c "import joblib; print('Joblib installed successfully')"
-
-
 
       - name: Train model
         run: python train.py
